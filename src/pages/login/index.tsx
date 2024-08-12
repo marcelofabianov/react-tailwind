@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { Input } from "../../ui/form/input";
+import { Label } from "../../ui/form/label";
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -6,7 +8,7 @@ export function Login() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Aqui você pode adicionar a lógica de autenticação
+    //
     console.log("Email:", email);
     console.log("Password:", password);
   };
@@ -19,37 +21,25 @@ export function Login() {
         </h2>
         <form onSubmit={handleSubmit}>
           <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-200"
-            >
-              Email
-            </label>
-            <input
+            <Label htmlFor="email">E-mail</Label>
+            <Input
               type="email"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-lime-500 focus:border-lime-500 sm:text-sm"
-              placeholder="example@example.com"
+              placeholder="exemplo@site.com"
               required
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-6">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-200"
-            >
-              Password
-            </label>
-            <input
+            <Label htmlFor="password">Senha</Label>
+            <Input
               type="password"
               id="password"
               value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 block w-full px-3 py-2 border border-gray-700 rounded-md bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-lime-500 focus:border-lime-500 sm:text-sm"
-              placeholder="******"
+              placeholder="**********"
               required
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
           <button
@@ -59,6 +49,14 @@ export function Login() {
             Login
           </button>
         </form>
+        <div className="mt-6 flex justify-between text-sm text-gray-400">
+          <a href="" className="hover:text-gray-300">
+            Esqueci minha senha
+          </a>
+          <a href="" className="hover:text-gray-300">
+            Primeiro acesso
+          </a>
+        </div>
       </div>
     </div>
   );
