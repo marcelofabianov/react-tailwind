@@ -1,6 +1,6 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
-import { Home } from "./pages/home"
-import { Login } from "./pages/login"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { Home } from "./pages/home";
+import { Login } from "./pages/login";
 
 const router = createBrowserRouter([
   {
@@ -9,12 +9,14 @@ const router = createBrowserRouter([
   },
   {
     path: "/login",
-    element: <Login />
-  }
-])
+    element: <Login />,
+  },
+]);
 
 export function App() {
   return (
-    <RouterProvider router={router} />
-  )
+    <div className="bg-slate-950 h-svh text-white">
+      <RouterProvider router={router} />
+    </div>
+  );
 }

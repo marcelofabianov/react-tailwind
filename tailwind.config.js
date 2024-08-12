@@ -1,11 +1,14 @@
-/** @type {import('tailwindcss').Config} */
 export default {
   content: [
     './src/**/*.tsx',
     './index.html'
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        comfortaa: ['"Comfortaa"', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
